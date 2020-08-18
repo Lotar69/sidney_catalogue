@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class DeviseCreateBuyers < ActiveRecord::Migration[6.0]
+class AddDeviseToSellers < ActiveRecord::Migration[6.0]
   def change
-    create_table :buyers do |t|
+    create_table :sellers do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -32,14 +32,14 @@ class DeviseCreateBuyers < ActiveRecord::Migration[6.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.string :user_name
 
-      t.timestamps null: false
+      # Uncomment below if timestamps were not included in your original model.
+      # t.timestamps null: false
     end
 
-    add_index :buyers, :email,                unique: true
-    add_index :buyers, :reset_password_token, unique: true
-    # add_index :buyers, :confirmation_token,   unique: true
-    # add_index :buyers, :unlock_token,         unique: true
+    add_index :sellers, :email,              unique: true
+    add_index :sellers, :reset_password_token, unique: true
+    # add_index :sellers, :confirmation_token,   unique: true
+    # add_index :sellers, :unlock_token,         unique: true
   end
 end
