@@ -37,6 +37,8 @@ seller3 = Seller.new(user_name: 'ANIMERS', password: '123456')
 seller3.save!
 puts ("seller3 ok")
 
-
+animal = Animal.new(gender: 'male', category: 'dog', age: 'young', stage: '1st hand', health: 'good', description: 'robot dog', seller_id: seller1[:id])
+animal.save!
+puts("animal ok")
 
 puts 'cree'

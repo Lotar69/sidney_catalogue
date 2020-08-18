@@ -1,5 +1,6 @@
 class BuyersController < ApplicationController
   def index
+
   end
 
   def create
@@ -15,5 +16,11 @@ class BuyersController < ApplicationController
   end
 
   def new
+  end
+
+  private
+
+  def set_animal
+    @animal = Animal.find(params[:animal_id])
   end
 end
