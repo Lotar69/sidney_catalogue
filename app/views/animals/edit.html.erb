@@ -1,2 +1,8 @@
 <h1>Animals#edit</h1>
-<p>Find me in app/views/animals/edit.html.erb</p>
+
+<%= simple_form_for @animal do |f| %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Add picture", class: "btn btn-primary" %>
+<% end %>
+<br>
+<%= link_to 'Back', animal_path(@animal.id), class: "btn btn-primary" %>
