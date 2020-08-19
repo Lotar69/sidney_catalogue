@@ -1,4 +1,13 @@
 <h1>Animals#index</h1>
+
 <% @animals.each do |animal| %>
-  <%= animal.category %>
- <% end %>
+  <div class="card animal-list col-lg-6">
+      <p><%= animal.category %> </p>
+      <% if animal.photo.attached? %>
+        <span><%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %></span>
+      <% end %>
+      <%= link_to "See details", animal_path(animal.id) %>
+  </div>
+<% end %>
+
+<%= link_to "Add a new Animal", new_animal_path %>
