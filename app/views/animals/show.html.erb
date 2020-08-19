@@ -1,11 +1,27 @@
-<h1> <%= @animal.description %> </h1>
+<div class="container">
 
-<ul class="list-group my-3">
-  <% if @animal.photo.attached? %>
-    <%= cl_image_tag @animal.photo.key, height: 450, width: 600, crop: :fill %>
-  <% end %>
-</ul>
+<h1 class="animal-category"> <%= @animal.category %> </h1>
 
-<%= link_to 'Add a picture', edit_animal_path %>
-<%= link_to "Add a new Animal", new_animal_path(@animal) %>
-<%= link_to 'Back', animals_path %>
+<div class="Product-Animal">
+      <p>CATEGORY: <%= @animal.category %></p>
+</div>
+
+
+<div class="Picture">
+   <%= @animal.photo %>
+</div>
+
+
+<div class="information"></div>
+      <p>PRICE:    <%= @animal.price %></p>
+      <p>AGE:      <%= @animal.age %></p>
+      <p>STAGE:    <%= @animal.stage %></p>
+      <p>GENDER:   <%= @animal.gender %></p>
+      <p>HEALTH:   <%= @animal.health %></p>
+      <p>SELLER:   <%= @animal.seller.user_name %></p>
+</div>
+
+
+<%= link_to 'BUY', animals_path %>
+
+<%= link_to 'RETRUN TO CATALOGUE', animals_path %>
