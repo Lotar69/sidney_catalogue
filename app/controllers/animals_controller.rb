@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-  before_action :find_animal, only: [:show, :edit, :create, :update]
+  before_action :find_animal, only: [:show, :edit, :update]
   skip_before_action :authenticate_buyer!, only: [:edit, :update, :new, :create]
   before_action :authenticate_seller!, only: [:edit, :update, :new, :create]
 
@@ -15,6 +15,8 @@ class AnimalsController < ApplicationController
   end
 
   def create
+    @animal = Animal.new(animal_params)
+    @anima.seller = current_seller
     if @animal.save
       redirect_to animals_path(@animal)
     else
@@ -27,7 +29,7 @@ class AnimalsController < ApplicationController
 
   def update
     @animal.update(animal_params)
-
+    
     redirect_to dashboard_path
   end
 

@@ -1,2 +1,16 @@
-<h1>Animals#new</h1>
+<div class="content-form-animal">
+  <div class="form-animal">
+    <%= simple_form_for @animal do |f| %>
+    <%= f.input :category, :label => 'CATEGORY' %>
+    <%= f.input :gender, :label => 'GENDER' %>
+    <%= f.input :age, :label => 'AGE' %>
+    <%= f.input :stage, :label => 'STAGE' %>
+    <%= f.input :health, :label => 'HEALTH' %>
+    <%= f.input :description, :label => 'DESCRIPTION' %>
+    <%= f.input :price, :label => 'PRICE' %>
+    <%= f.input :photo, as: :file, :label => 'PHOTO' %>
+      <%= f.submit "CREATE ANIMAL", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
 
