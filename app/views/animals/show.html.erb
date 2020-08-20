@@ -1,27 +1,49 @@
 <div class="container">
-
-<h1 class="animal-category"> <%= @animal.category %> </h1>
-
-<div class="Product-Animal">
-      <p>CATEGORY: <%= @animal.category %></p>
+  <div class="animal-container">
+    <h1 class="animal-category"> CATEGORY: </h1>
+      <span> <%= @animal.category.upcase %></span>
+    <div class="Picture">
+      <% if @animal.photo.attached? %>
+        <%= cl_image_tag @animal.photo.key, height: 450, width: 600, crop: :fill %>
+      <% end %>
+    </div>
+    <div class="btn">
+      <%= link_to 'RETRUN TO CATALOGUE', animals_path, class: "back-catalogue"%>
+    </div>
+  </div>
+  <div class="animal-container-list">
+    <div class="information">
+        <div class="content-price">
+          <p id="price"> <%= number_with_delimiter(@animal.price, delimiter: ' ') %>$</p>
+          </div>
+      <p>AGE:        <%= @animal.age %></p>
+      <p>STAGE:      <%= @animal.stage %></p>
+      <p>GENDER:     <%= @animal.gender %></p>
+      <p>HEALTH:     <%= @animal.health %></p>
+      <p id="seller-name">SELLER:  <%= @animal.seller.user_name %></p>
+    </div>
+    <div class="btn btn-buy" >
+      <%= link_to 'BUY', animals_path, class: "link"%>
+    </div>
+  </div>
 </div>
 
-
-<div class="Picture">
-   <%= @animal.photo %>
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">MERCI POUR VOTRE ACHAT</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>LE VENDEUR VOUS CONFIRMERA VOTRE ACHAT SOUS 48H</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">RETURN TO CATALOGUE</button>
+        <button type="button" class="btn btn-primary">DECONNEXION</button>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-<div class="information"></div>
-      <p>PRICE:    <%= @animal.price %></p>
-      <p>AGE:      <%= @animal.age %></p>
-      <p>STAGE:    <%= @animal.stage %></p>
-      <p>GENDER:   <%= @animal.gender %></p>
-      <p>HEALTH:   <%= @animal.health %></p>
-      <p>SELLER:   <%= @animal.seller.user_name %></p>
-</div>
-
-
-<%= link_to 'BUY', animals_path %>
-
-<%= link_to 'RETRUN TO CATALOGUE', animals_path %>
