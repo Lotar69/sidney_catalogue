@@ -1,65 +1,93 @@
-.nav{
-  width: 40%;
-  height: 100px;
-  margin-bottom: 200px;
-}
-.nav ul{
+.container {
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
-.nav ul li{
-  margin-bottom: 20px;
-}
-.nav ul li a{
-  text-decoration: none;
-  color: chocolate;
+  font-size: 24px;
   text-shadow: 0px 0px 4px chocolate;
-  font-family: "Game Over";
-  font-size: 50px;
-  position: relative;
+  background-color: black;
+  border: none;
+  color: chocolate;
+  border: 2px solid chocolate;
+  margin-top: 125px;
 }
-.inactive:before{
-  content: "";
-  position: absolute;
+
+.animal-container {
+  margin: 20px 30px;
+}
+
+.animal-container-list {
+  flex-grow: 1;
+  margin: 20px 30px;
+}
+.information{
   width: 100%;
-  height: 2px;
-  bottom: -5px;
-  left: 0%;
-  border-radius: 0px;
-  z-index: 0;
-  background: chocolate;
-  box-shadow: 0px 0px 4px chocolate;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: 0.3s ease-in-out;
-  transform-origin: left;
-  transition-delay: 0s;
+}
+.content-price{
+  width: 100%;
+  text-align: right;
+}
+#price {
+  font-size: 48px;
+}
+
+.animal-category {
+  font-size: 24px;
+}
+
+ span {
+   font-size: 48px;
   }
-.inactive:hover:before {
-  visibility: visible;
-  transform: scaleX(1);
+#seller-name {
+  margin-top: 100px;
 }
-.active:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  bottom: -5px;
-  left: 0%;
-  border-radius: 0px;
-  z-index: 0;
-  background: chocolate;
-  box-shadow: 0px 0px 4px chocolate;
-  visibility: visible;
-  transform: scaleX(1);
-  transition: 0.3s ease-in-out;
-  transform-origin: left;
-  transition-delay: 0s;
+
+.btn-buy{
+  margin-top: 100px;
 }
-#marb{
-  margin-bottom: 50px;
-}
-#mart{
-  margin-top: 50px;
+.btn{
+  position: relative;
+    .link{
+      text-decoration: none;
+      color: chocolate;
+    }
+    .link:before{
+      content: "";
+      position: absolute;
+      width: 60%;
+      height: 2px;
+      bottom: 4px;
+      left: 10px;
+      border-radius: 0px;
+      z-index: 0;
+      background: chocolate;
+      box-shadow: 0px 0px 4px chocolate;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: 0.3s ease-in-out;
+      transform-origin: left;
+      transition-delay: 0s;
+    }
+    .back-catalogue:before {
+      content: "";
+      position: absolute;
+      width: 60%;
+      height: 2px;
+      bottom: 4px;
+      left: 10px;
+      border-radius: 0px;
+      z-index: 0;
+      background: chocolate;
+      box-shadow: 0px 0px 4px chocolate;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: 0.3s ease-in-out;
+      transform-origin: left;
+      transition-delay: 0s;
+    }
+    .link:hover:before{
+      visibility: visible;
+      transform: scaleX(1);
+    }
+    .back-catalogue:before{
+      visibility: visible;
+      transform: scaleX(1);
+    }
 }
