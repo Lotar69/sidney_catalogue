@@ -3,6 +3,6 @@ class DashboardsController < ApplicationController
   before_action :authenticate_seller!
 
   def show
-    @animals = Animal.all
+    @animals = current_seller.animals
   end
 end

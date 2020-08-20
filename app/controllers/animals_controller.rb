@@ -1,5 +1,7 @@
 class AnimalsController < ApplicationController
   before_action :find_animal, only: [:show, :edit, :create, :update]
+  skip_before_action :authenticate_buyer!, only: [:edit, :update, :new, :create]
+  before_action :authenticate_seller!, only: [:edit, :update, :new, :create]
 
   def index
     @animals = Animal.all
@@ -26,7 +28,7 @@ class AnimalsController < ApplicationController
   def update
     @animal.update(animal_params)
 
-    redirect_to animal_path(@animal)
+    redirect_to dashboard_path
   end
 
   private

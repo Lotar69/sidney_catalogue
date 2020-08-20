@@ -3,7 +3,7 @@ class Seller < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  has_many :animals
   def email_required?
     false
   end
