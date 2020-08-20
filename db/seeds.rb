@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'creation'
+Animal.destroy_all
 Seller.destroy_all
 Buyer.destroy_all
-Animal.destroy_all
+
 
 buyer1 = Buyer.new(user_name: 'DAWSON', password: '123456')
 puts ("buyer1 new ok")
