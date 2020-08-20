@@ -10,7 +10,6 @@ Animal.destroy_all
 Seller.destroy_all
 Buyer.destroy_all
 
-
 buyer1 = Buyer.new(user_name: 'DAWSON', password: '123456')
 puts ("buyer1 new ok")
 
