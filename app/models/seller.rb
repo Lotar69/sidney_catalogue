@@ -10,5 +10,5 @@ class Seller < ApplicationRecord
 
   def email_changed?
     false
-  end 
+  end
 end
