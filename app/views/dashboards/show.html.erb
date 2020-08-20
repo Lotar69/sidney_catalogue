@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container dashboard">
   <div class="row dashboard-row">
     <div class="nav col-lg-3">
       <ul>
-        <li id="marb"><a href="#" class="un inactive-d">CREATE NEW SELL</a></li>
-        <li><a href="#" class="deux inactive-d">VENTE EN COURS</a></li>
-        <!-- <li><a href="#" class="trois inactive-d">VENTE A CONFIRMER</a></li> -->
-        <li><a href="#" class="quatre inactive-d">HISTORIQUE DE VENTE</a></li>
-        <li id="mart"><a href="#" class="cinq inactive-d">DECONNECTION</a></li>
+        <li id="marb"><%= link_to "CREATE NEW SELL", new_animal_path, class: 'un inactive-d' %></li>
+        <li><div class="deux inactive-d">VENTE EN COURS</div></li>
+        <!-- <li class="trois inactive-d">VENTE A CONFIRMER</li> -->
+        <li class="quatre inactive-d">HISTORIQUE DE VENTE</li>
+        <li id="mart"><%= link_to "DECONNECTION", destroy_seller_session_path, class: 'cinq inactive-d' %></li>
       </ul>
     </div>
     <div class="list col-lg-9">
@@ -25,8 +25,8 @@
               <p>DESCRIPTION : <%= animal.description %></p>
               <div class="content-img">
                 <% if animal.photo.attached? %>
-                  <%= cl_image_tag animal.photo.key, crop: :fill, class: 'img' %>
-                <%end%>
+                <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+                <% end %>
               </div>
             </div>
             <div class="content-card col-lg-2">
@@ -40,41 +40,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-<!-- <div class="row align-items-end">
-    <div class="nav col-lg-2">
-      <ul>
-        <li id="marb"><a href="#" class="un inactive">CREATE NEW SELL</a></li>
-        <li><a href="#" class="deux inactive">VENTE EN COURS</a></li>
-        <%# <li><a href="#" class="trois inactive">VENTE A CONFIRMER</a></li> %>
-        <li><a href="#" class="quatre inactive">HISTORIQUE DE VENTE</a></li>
-        <li id="mart"><a href="#" class="cinq inactive">DECONNECTION</a></li>
-      </ul>
-    </div>
-    <div class="list-animals col-lg-10">
-      <ul>
-        <% @animals.each do |animal| %>
-          <div class="card">
-            <div class="content-img">
-              <% if animal.photo.attached? %>
-                <%= cl_image_tag animal.photo.key, crop: :fill, class: 'img' %>
-              <%end%>
-            </div>
-            <div class="content-card">
-              <h2><%= animal.category %></h2>
-              <div class="btn">
-                <%= link_to "edit",animal_path(animal), class: "link" %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </ul>  
-    </div>
-  </div> -->

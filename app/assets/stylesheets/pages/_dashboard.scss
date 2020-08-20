@@ -1,0 +1,72 @@
+.list::-webkit-scrollbar {
+  background-color: black;
+  border: none;
+  width: 10px;
+}
+.list::-webkit-scrollbar-track-piece {
+  background-color: black;
+  border: none;
+  width: 10px;
+}
+.list::-webkit-scrollbar-thumb {
+  background-color: chocolate;
+  background-size: cover;
+  border: none;
+}
+.list::-webkit-scrollbar-button {
+  background-color: chocolate;
+}
+.list{
+  border: 2px solid chocolate;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  ul{
+    padding: 0 20px;
+    margin: 0;
+    .card-row{
+      margin: 20px 0 0 0;
+      padding: 0 0 20px 0;
+      border-bottom: 2px solid chocolate;
+      .content-card{
+        *{
+          font-size: 50px;
+          color: chocolate;
+          text-shadow: 0px 0px 4px chocolate;
+          font-family: "Game Over";
+          margin: 0;
+          padding: 0;
+          height: 50px;
+          display: flex;
+          align-items: center;
+        }
+        .btn{
+          .link{
+            text-decoration: none;
+          }
+          .link:before{
+            content: "";
+            position: absolute;
+            width: 31%;
+            height: 2px;
+            bottom: 8px;
+            left: 17px;
+            border-radius: 0px;
+            z-index: 0;
+            background: chocolate;
+            box-shadow: 0px 0px 4px chocolate;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: 0.3s ease-in-out;
+            transform-origin: left;
+            transition-delay: 0s;
+          }
+          .link:hover:before{
+            visibility: visible;
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+}
