@@ -1,8 +1,4 @@
-
-body{
-  background-color: black;
-}
-.container{
+.dashboard{
   height: 100vh;
   .dashboard-row{
     height: 100%;
@@ -16,117 +12,66 @@ body{
       ul{
         display: flex;
         flex-direction: column;
-        height: 30%;
+        height: 35%;
         li{
           list-style: none;
           margin: 0;
           height: 20%;
-          a{
-            text-decoration: none;
-            color: chocolate;
-            text-shadow: 0px 0px 4px chocolate;
-            font-family: "Game Over";
-            font-size: 50px;
+          text-decoration: none;
+          color: chocolate;
+          text-shadow: 0px 0px 4px chocolate;
+          font-family: "Game Over";
+          font-size: 50px;
+          position: relative;
+          cursor: pointer;
+          .deux{
+            width: 77%;
             position: relative;
-            text-align: end;
-          }
-          #mart{
-            margin-top: 10%;
-          }
-          #marb{
-            margin-bottom: 10%;
-          }
-          .inactive-d:before{
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: -5px;
-            left: 0%;
-            border-radius: 0px;
-            z-index: 0;
-            background: chocolate;
-            box-shadow: 0px 0px 4px chocolate;
-            visibility: hidden;
-            transform: scaleX(0);
-            transition: 0.3s ease-in-out;
-            transform-origin: left;
-            transition-delay: 0s;
-          }
-          .inactive-d:hover:before{
-            visibility: visible;
-            transform: scaleX(1);
-          }
-          .active-d:before{
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            bottom: -5px;
-            left: 0%;
-            border-radius: 0px;
-            z-index: 0;
-            background: chocolate;
-            box-shadow: 0px 0px 4px chocolate;
-            visibility: visible;
-            transform: scaleX(1);
-            transition: 0.3s ease-in-out;
-            transform-origin: left;
-            transition-delay: 0s;
           }
         }
-      }
-    }
-    .list{
-      border: 2px solid chocolate;
-      margin: 0;
-      padding: 0;
-      ul{
-        padding: 0 20px;
-        margin: 0;
-        .card-row{
-          margin: 20px 0 0 0;
-          padding: 0 0 20px 0;
-          border-bottom: 2px solid chocolate;
-          .content-card{
-            *{
-              font-size: 50px;
-              color: chocolate;
-              text-shadow: 0px 0px 4px chocolate;
-              font-family: "Game Over";
-              margin: 0;
-              padding: 0;
-              height: 50px;
-              display: flex;
-              align-items: center;
-            }
-            .btn{
-              .link{
-                text-decoration: none;
-              }
-              .link:before{
-                content: "";
-                position: absolute;
-                width: 31%;
-                height: 2px;
-                bottom: 8px;
-                left: 17px;
-                border-radius: 0px;
-                z-index: 0;
-                background: chocolate;
-                box-shadow: 0px 0px 4px chocolate;
-                visibility: hidden;
-                transform: scaleX(0);
-                transition: 0.3s ease-in-out;
-                transform-origin: left;
-                transition-delay: 0s;
-              }
-              .link:hover:before{
-                visibility: visible;
-                transform: scaleX(1);
-              }
-            }
-          }
+        #mart{
+          margin-top: 10%;
+        }
+        #marb{
+          margin-bottom: 10%;
+        }
+        .inactive-d:before{
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: -5px;
+          left: 0%;
+          border-radius: 0px;
+          z-index: 0;
+          background: chocolate;
+          box-shadow: 0px 0px 4px chocolate;
+          visibility: hidden;
+          transform: scaleX(0);
+          transition: 0.3s ease-in-out;
+          transform-origin: left;
+          transition-delay: 0s;
+        }
+        .inactive-d:hover:before{
+          visibility: visible;
+          transform: scaleX(1);
+        }
+        .active-d:before{
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 4px;
+          bottom: -5px;
+          left: 0%;
+          border-radius: 0px;
+          z-index: 0;
+          background: chocolate;
+          box-shadow: 0px 0px 4px chocolate;
+          visibility: visible;
+          transform: scaleX(1);
+          transition: 0.3s ease-in-out;
+          transform-origin: left;
+          transition-delay: 0s;
         }
       }
     }
