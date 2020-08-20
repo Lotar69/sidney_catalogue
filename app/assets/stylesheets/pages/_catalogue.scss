@@ -1,40 +1,49 @@
-.animals-container {
-  border: 2px solid chocolate;
-  margin: 0 auto;
-  width: 30%;
+*{
+  font-family: 'VT323', monospace;
+  font-size: 28px;
 }
-
-.animal-list p {
-  color: chocolate;
-  margin: 15px 20px;
-}
-
-.animal-list {
-  width: 90%;
-  margin: 0 auto;
+.show{
+  height: 100vh;
   display: flex;
-  border-bottom: 2px solid chocolate;
-  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 175px;
+  .animals-container {
+    border: 2px solid chocolate;
+    margin: 0 auto 0 auto;
+    overflow-y: scroll;
+    width: 70%;
+    height: 70%;
+    .animal-list {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      border-bottom: 2px solid chocolate;
+      justify-content: space-between;
+      p {
+        color: chocolate;
+        margin: 15px 20px;
+      }
+      a {
+        color: chocolate;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+    }
+    .animal-list:last-child {
+      border-bottom: none;
+    }
+  }
+  .btn-out-catalog{
+    padding: 0 !important;
+    a {
+    color: chocolate;
+    margin-left: 30px;
+    }
+    a:hover {
+    color: chocolate;
+    text-decoration: none;
+    }
+  }
 }
-
-.animal-list:last-child {
-  border-bottom: none;
-}
-
-.animal-list a {
-  color: chocolate;
-}
-
-.animal-list a:hover {
-  text-decoration: none;
-}
-
-p a {
-  color: chocolate;
-  margin-left: 30px;
-}
-
-p a:hover {
-  color: chocolate;
-  text-decoration: none;
-}
+ 

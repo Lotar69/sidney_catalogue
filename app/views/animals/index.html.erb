@@ -1,24 +1,23 @@
-<h1>Your animals' catalogue</h1>
-
-<div class="animals-container">
-  <% @animals.each do |animal| %>
-    <div class="animal-list">
-      <div>
-        <p>CATEGORY: <%= animal.category %> </p>
-        <p>AGE: <%= animal.age %> </p>
-        <p>STAGE: <%= animal.stage %> </p>
+<div class="container show">
+  <p class="btn-out-catalog"><%= link_to "SIGN OUT", destroy_seller_session_path, class: 'cinq inactive-d' %></p>
+  <div class="animals-container">
+    <% @animals.each do |animal| %>
+      <div class="animal-list">
+        <div>
+          <p>CATEGORY: <%= animal.category %> </p>
+          <p>AGE: <%= animal.age %> </p>
+          <p>STAGE: <%= animal.stage %> </p>
+        </div>
+        <div>
+          <p>GENDER: <%= animal.gender %> </p>
+          <p>HEALTH: <%= animal.health %> </p>
+          <p><%= animal.price %> $</p>
+          <p><%= link_to "+ VIEW DETAILS", animal_path(animal.id) %></p>
+        </div>
+          <%# <% if animal.photo.attached? %>
+            <%# <span><%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %></span> %>
+          <%# <% end %> %> %>
       </div>
-      <div>
-        <p>GENDER: <%= animal.gender %> </p>
-        <p>HEALTH: <%= animal.health %> </p>
-        <p><%= animal.price %> $</p>
-        <p><%= link_to "+ VIEW DETAILS", animal_path(animal.id) %></p>
-      </div>
-        <% if animal.photo.attached? %>
-          <span><%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %></span>
-        <% end %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
-
-<p><%= link_to "SIGN OUT", destroy_seller_session_path, class: 'cinq inactive-d' %></p>
