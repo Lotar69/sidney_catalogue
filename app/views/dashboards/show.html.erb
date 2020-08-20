@@ -6,13 +6,13 @@
         <li><div class="deux inactive-d">VENTE EN COURS</div></li>
         <!-- <li class="trois inactive-d">VENTE A CONFIRMER</li> -->
         <li class="quatre inactive-d">HISTORIQUE DE VENTE</li>
-        <li id="mart"><%= link_to "DECONNECTION", destroy_seller_session_path, class: 'cinq inactive-d' %></li>
+        <li id="mart"><%= link_to "DECONNECTION", destroy_seller_session_path, class: 'cinq inactive-d', method: :delete %></li>
       </ul>
     </div>
     <div class="list col-lg-9">
       <ul>
         <% @animals.each do |animal| %>
-          <div class="row card-row">
+          <div class="row card-row" data-sold="<%= animal.buyer_id.present? %>">
             <div class="content-card col-lg-4">
               <h2>CATEGORY : <%= animal.category %></h2>
               <p>GENDER : <%= animal.gender %></p>
@@ -25,7 +25,7 @@
               <p>DESCRIPTION : <%= animal.description %></p>
               <div class="content-img">
                 <% if animal.photo.attached? %>
-                <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+                  <%= cl_image_tag animal.photo.key, class: 'img', crop: :fill %>
                 <% end %>
               </div>
             </div>
