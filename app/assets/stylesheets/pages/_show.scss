@@ -36,6 +36,8 @@
     .btn-buy{
       margin-top: 70px;
       position: relative;
+      width: 30px;
+      cursor: pointer;
       .link-buy{
         text-decoration: none;
         color: chocolate;
@@ -43,7 +45,7 @@
       .link-buy:before{
         content: "";
         position: absolute;
-        width: 9%;
+        width: 100%;
         height: 2px;
         bottom: 4px;
         left: 0px;
@@ -67,6 +69,7 @@
 .btn-back{
   position: relative;
   margin-top: 23px;
+  width: 40%;
   .back-catalogue{
     text-decoration: none;
     color: chocolate;
@@ -74,7 +77,7 @@
   .back-catalogue:before {
     content: "";
     position: absolute;
-    width: 35%;
+    width: 87%;
     height: 2px;
     bottom: 4px;
     left: 0px;
@@ -94,17 +97,79 @@
   }
 }
 
+.modal-header{
+  text-shadow: 0px 0px 4px chocolate;
+  margin: 0 auto;
+  background-color: black;
+  border: none;
+  color: chocolate;
+}
+.modal-body{
+  text-shadow: 0px 0px 4px chocolate;
+  text-align: center;
+  background-color: black;
+  border: none;
+  color: chocolate;
 
+}
+.modal-footer{
+  text-shadow: 0px 0px 4px chocolate;
+  text-align: center;
+  background-color: black;
+  border: none;
+  color: chocolate;
+}
 
+.back-catalogue{
+  text-shadow: 0px 0px 4px chocolate;
+  text-align: center;
+  background-color: black;
+  border: none;
+  text-decoration: none;
+  color: chocolate;
+  margin: auto;
+}
+.back-catalogue:hover{
+  text-decoration:none;
+}
+.back-catalogue:before{
+  content: "";
+  position: absolute;
+  width: 35%;
+  height: 2px;
+  bottom: 4px;
+  left: 0px;
+  border-radius: 0px;
+  z-index: 0;
+  background: chocolate;
+  box-shadow: 0px 0px 4px chocolate;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: 0.3s ease-in-out;
+  transform-origin: left;
+  transition-delay: 0s;
+}
+.back-catalogue:hover:before{
+ visibility: visible;
+ transform: scaleX(1);
+}
 
+.modal-content{
+  background-color: black;
+}
 
+.btn-buy {
+  background: black;
+}
 
-
-
-
-
- 
-
-
-
-
+.back-catalogue{
+  text-align: center;
+}
+.btn-return{
+  display: flex;
+  justify-content: center;
+}
+.lolo {
+  width: 50%;
+  margin-left: 25%;
+}
