@@ -1,3 +1,12 @@
+<%= form_tag animals_path, method: :get, class: 'form-search-animals' do %>
+  <%= label_tag "RESEARCH..", nil, class: "label-search-animals" %>
+  <%= text_field_tag :category,
+    params[:category],
+    class: "form-control"
+  %>
+  <%= submit_tag "Search", class: "hidden-button" %>
+<% end %>
+
 <div class="container show">
   <p class="btn-out-catalog"><%= link_to "SIGN OUT", destroy_seller_session_path, class: 'inactive-s' %></p>
   <div class="animals-container">
@@ -11,13 +20,11 @@
         <div>
           <p>GENDER: <%= animal.gender %> </p>
           <p>HEALTH: <%= animal.health %> </p>
-          <p><%= animal.price %> $</p>
+          <p id="price"> <%= number_with_delimiter(animal.price, delimiter: ' ') %> BTC</p>
           <p class="btn-details"><%= link_to "+ VIEW DETAILS", animal_path(animal.id), class: "a-details" %></p>
         </div>
-          <%# <% if animal.photo.attached? %>
-            <%# <span><%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %></span> %>
-          <%# <% end %> %> %>
       </div>
     <% end %>
   </div>
 </div>
+
