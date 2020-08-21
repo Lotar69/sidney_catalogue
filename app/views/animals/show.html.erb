@@ -1,29 +1,29 @@
-<div class="container">
+<div class="container show-container">
   <div class="animal-container">
     <h1 class="animal-category"> CATEGORY: </h1>
-      <span> <%= @animal.category.upcase %></span>
+    <span> <%= @animal.category.upcase %></span>
     <div class="Picture">
       <% if @animal.photo.attached? %>
-        <%= cl_image_tag @animal.photo.key, height: 450, width: 600, crop: :fill %>
+        <%= cl_image_tag @animal.photo.key, height: 400, width: 600, crop: :fill %>
       <% end %>
     </div>
-    <div class="btn">
+    <div class="btn-back">
       <%= link_to 'RETRUN TO CATALOGUE', animals_path, class: "back-catalogue"%>
     </div>
   </div>
   <div class="animal-container-list">
     <div class="information">
-        <div class="content-price">
-          <p id="price"> <%= number_with_delimiter(@animal.price, delimiter: ' ') %>$</p>
-          </div>
+      <div class="content-price">
+        <p id="price"> <%= number_with_delimiter(@animal.price, delimiter: ' ') %>$</p>
+      </div>
       <p>AGE:        <%= @animal.age %></p>
       <p>STAGE:      <%= @animal.stage %></p>
       <p>GENDER:     <%= @animal.gender %></p>
       <p>HEALTH:     <%= @animal.health %></p>
       <p id="seller-name">SELLER:  <%= @animal.seller.user_name %></p>
     </div>
-    <div class="btn btn-buy" >
-      <%= link_to 'BUY', animals_path, class: "link"%>
+    <div class="btn-buy" >
+      <%= link_to 'BUY', animals_path, class: "link-buy"%>
     </div>
   </div>
 </div>

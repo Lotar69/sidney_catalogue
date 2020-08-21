@@ -16,9 +16,9 @@ class AnimalsController < ApplicationController
 
   def create
     @animal = Animal.new(animal_params)
-    @anima.seller = current_seller
+    @animal.seller = current_seller
     if @animal.save
-      redirect_to animals_path(@animal)
+      redirect_to dashboard_path
     else
       render :new
     end

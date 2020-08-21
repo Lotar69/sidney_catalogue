@@ -1,5 +1,5 @@
 <div class="container show">
-  <p class="btn-out-catalog"><%= link_to "SIGN OUT", destroy_seller_session_path, class: 'cinq inactive-d' %></p>
+  <p class="btn-out-catalog"><%= link_to "SIGN OUT", destroy_seller_session_path, class: 'inactive-s' %></p>
   <div class="animals-container">
     <% @animals.each do |animal| %>
       <div class="animal-list">
@@ -12,7 +12,7 @@
           <p>GENDER: <%= animal.gender %> </p>
           <p>HEALTH: <%= animal.health %> </p>
           <p><%= animal.price %> $</p>
-          <p><%= link_to "+ VIEW DETAILS", animal_path(animal.id) %></p>
+          <p class="btn-details"><%= link_to "+ VIEW DETAILS", animal_path(animal.id), class: "a-details" %></p>
         </div>
           <%# <% if animal.photo.attached? %>
             <%# <span><%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %></span> %>

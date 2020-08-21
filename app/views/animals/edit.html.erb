@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <div class="container editor">
   <div class="row row-edit">
     <div class="nav-edit col-lg-3">
@@ -14,20 +8,18 @@
     <div class="content-form-animal col-lg-9">
       <div class="form-animal form-inline">
         <%= simple_form_for @animal do |f| %>
-          <%= f.input :category, :value.upcase, :label => 'CATEGORY : ' %>
+          <%= f.input :category, :label => 'CATEGORY : ' %>
           <%= f.input :gender, :label => 'GENDER : ' %>
           <%= f.input :age, :label => 'AGE : ' %>
           <%= f.input :stage, :label => 'STAGE : ' %>
           <%= f.input :health, :label => 'HEALTH : ' %>
-          <%= f.input :description, :label => 'DESCRIPTION : ' %>
           <%= f.input :price, :label => 'PRICE : ' %>
+          <%= f.input :description, :label => 'DESCRIPTION : ' %>
           <%= f.input :photo, as: :file, :label => 'PHOTO : ' %>
           <div class="btn-update">
             <%= f.submit "UPDATE ANIMAL", class: "link-update" %>
           </div>
-          <div class="btn-update-back">
-            <%= link_to 'BACK', dashboard_path, class: "link" %>
-          </div>
+          
         <% end %>
       </div>
     </div>
