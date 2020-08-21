@@ -14,35 +14,31 @@
   <div class="animal-container-list">
     <div class="information">
       <div class="content-price">
-        <p id="price"> <%= number_with_delimiter(@animal.price, delimiter: ' ') %>$</p>
+        <p id="price"> <%= number_with_delimiter(@animal.price, delimiter: ' ') %> BTC</p>
       </div>
       <p>AGE:        <%= @animal.age %></p>
       <p>STAGE:      <%= @animal.stage %></p>
       <p>GENDER:     <%= @animal.gender %></p>
       <p>HEALTH:     <%= @animal.health %></p>
       <p id="seller-name">SELLER:  <%= @animal.seller.user_name %></p>
-    </div>
-    <div class="btn-buy" >
-      <%= link_to 'BUY', animals_path, class: "link-buy"%>
+      <div class="btn-buy">
+        <div class="btn-link-buy link-buy" data-toggle="modal" data-target="#exampleModal">BUY</button>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="modal" tabindex="-1">
-  <div class="modal-dialog">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">MERCI POUR VOTRE ACHAT</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title" id="exampleModalLabel">MERCI POUR VOTRE ACHAT</h5>
       </div>
       <div class="modal-body">
-        <p>LE VENDEUR VOUS CONFIRMERA VOTRE ACHAT SOUS 48H</p>
+        LE VENDEUR CONFIRMERA VOTRE ACHAT SOUS 48H
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">RETURN TO CATALOGUE</button>
-        <button type="button" class="btn btn-primary">DECONNEXION</button>
+      <div class="btn-back lolo">
+        <%= link_to 'RETRUN TO CATALOGUE', animals_path, class: "back-catalogue"%>
       </div>
     </div>
   </div>
