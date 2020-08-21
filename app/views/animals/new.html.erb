@@ -7,7 +7,7 @@
     </div>
     <div class="content-form-animal col-lg-9">
       <div class="form-animal form-inline">
-        <%= simple_form_for @animal do |f| %>
+        <%= simple_form_for @animal, html: { multipart: true } do |f| %>
           <%= f.input :category, :label => 'CATEGORY : ' %>
           <%= f.input :gender, :label => 'GENDER : ' %>
           <%= f.input :age, :label => 'AGE : ' %>
@@ -19,7 +19,7 @@
           <div class="form-group file optional animal_photo">
             <label class="file optional" for="animal_photo">PHOTO :</label>
             <div class="label">
-              <div class= "import">IMPORT IMAGE</div>
+              <div class="import">IMPORT IMAGE</div>
               <input class="form-control-file file optional bouton-photo" type="file" name="animal[photo]" id="animal_photo">
             </div>
           </div>
