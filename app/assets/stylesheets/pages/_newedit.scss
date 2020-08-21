@@ -41,11 +41,46 @@
         }
     }
   }
+
     .content-form-animal{
       border: 2px solid chocolate;
+      text-shadow: 0px 0px 4px chocolate;
       padding: 50px;
       .form-animal{
         height: 100%;
+        .btn-up{
+          margin-top: 20px;
+          text-shadow: 0px 0px 4px chocolate;
+          .link-up{
+            margin-top: 50px;
+            text-decoration: none;
+            color: chocolate;
+            background-color: transparent;
+            border: none;
+            position: relative;
+          }
+          .link-up:before{
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 2px;
+            bottom: 8px;
+            left: 17px;
+            border-radius: 0px;
+            z-index: 0;
+            background: chocolate;
+            box-shadow: 0px 0px 4px chocolate;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: 0.3s ease-in-out;
+            transform-origin: left;
+            transition-delay: 0s;
+          }
+          .link-up:hover:before{
+            visibility: visible;
+            transform: scaleX(1);
+          }
+        }
         label{
           font-family: 'VT323', monospace;
           font-size: 28px;
@@ -61,7 +96,7 @@
           font-size: 28px;
           color: chocolate;
           text-shadow: 0px 0px 4px #d2691e;
-          border-bottom: 2px solid chocolate;
+          box-shadow: none;
         }
         textarea::-webkit-scrollbar {
           background-color: black;
@@ -74,16 +109,62 @@
           width: 10px;
         }
         textarea::-webkit-scrollbar-thumb {
-          background-color: chocolate;
+          background-color: black;
           background-size: cover;
           border: none;
         }
         textarea::-webkit-scrollbar-button {
-          background-color: chocolate;
+          background-color: black;
         }
         textarea::-webkit-scrollbar-corner{
-          background-color: chocolate;
+          background-color: black;
         }
+        textarea::-webkit-resizer{
+          background-color: black;
+        }
+
+
+
+
+        #animal_price::-webkit-outer-spin-button,
+        #animal_price::-webkit-inner-spin-button{
+          -webkit-appearance: none;
+        }
+
+
+
+
+
+        .animal_price::-webkit-scrollbar-track-piece {
+          background-color: black;
+          border: none;
+          width: 10px;
+        }
+        .animal_price::-webkit-scrollbar-thumb {
+          background-color: black;
+          background-size: cover;
+          border: none;
+        }
+        .animal_price::-webkit-scrollbar-button {
+          background-color: black;
+        }
+        .animal_price::-webkit-scrollbar-corner{
+          background-color: black;
+        }
+        .animal_price::-webkit-resizer{
+          background-color: black;
+        }
+
+
+
+
+
+
+
+
+
+
+
         .was-validated .form-control:valid, .form-control.is-valid{
           background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23d2691e' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e")
         }
@@ -100,40 +181,63 @@
 .animal_photo{
   display: flex;
   margin-top: 20px;
-  .form-control-file{
-    width: 50%;
-    margin-left: 10px;
-  }
 }
-.btn-update{
-  margin-top: 20px;
-  
-  .link-update{
-    text-decoration: none;
-    color: chocolate;
-    background-color: transparent;
-    border: none;
-    position: relative;
-  }
-  .link-update:before{
-    content: "";
-    position: absolute;
-    width: 31%;
-    height: 2px;
-    bottom: 8px;
-    left: 17px;
-    border-radius: 0px;
-    z-index: 0;
-    background: chocolate;
-    box-shadow: 0px 0px 4px chocolate;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: 0.3s ease-in-out;
-    transform-origin: left;
-    transition-delay: 0s;
-  }
-  .link-update:hover:before{
-    visibility: visible;
-    transform: scaleX(1);
-  }
+.form-control-file.file.optional{
+  background-color: black;
+  color: chocolate;
+  text-shadow: 0px 0px 4px chocolate;
+}
+#new_animal{
+  width: 100%;
+}
+.form-group.file.optional.animal_photo{
+  display: flex;
+}
+
+#animal_photo{
+  width: 80%;
+  margin-left: 20px;
+}
+.bouton-photo{
+  background-color: red;
+}
+
+
+
+
+
+
+input[type="file"] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.import {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+
+.label {
+  display: inline-block;
+  position: relative;
+  height: 100px;
+  width: 400px;
+}
+
+div.dragover {
+  background-color: #aaa;
+}
+
+.import{
+  color: chocolate;
 }
