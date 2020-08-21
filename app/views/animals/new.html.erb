@@ -15,9 +15,16 @@
           <%= f.input :health, :label => 'HEALTH : ' %>
           <%= f.input :price, :label => 'PRICE : ' %>
           <%= f.input :description, :label => 'DESCRIPTION : ' %>
-          <%= f.input :photo, as: :file, :label => 'PHOTO : ' %>
-          <div class="btn-update">
-            <%= f.submit "CREATE ANIMAL", class: "link-update" %>
+          <%#= f.input :photo, as: :file, :label => 'PHOTO : ', input_html: { class: 'bouton-photo' } %>
+          <div class="form-group file optional animal_photo">
+            <label class="file optional" for="animal_photo">PHOTO :</label>
+            <div class="label">
+              <div class= "import">IMPORT IMAGE</div>
+              <input class="form-control-file file optional bouton-photo" type="file" name="animal[photo]" id="animal_photo">
+            </div>
+          </div>
+          <div class="btn-up">
+            <%= f.button :button, "CREATE ANIMAL", class: "link-up" %>
           </div>
         <% end %>
       </div>

@@ -14,9 +14,6 @@
           <p><%= animal.price %> $</p>
           <p class="btn-details"><%= link_to "+ VIEW DETAILS", animal_path(animal.id), class: "a-details" %></p>
         </div>
-          <%# <% if animal.photo.attached? %>
-            <%# <span><%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %></span> %>
-          <%# <% end %> %> %>
       </div>
     <% end %>
   </div>
