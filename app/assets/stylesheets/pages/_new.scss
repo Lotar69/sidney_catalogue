@@ -49,7 +49,8 @@ color: chocolate;
 box-shadow: none;
 }
 
-.buyer_user_name {
+.buyer_user_name,
+.seller_user_name {
   white-space: nowrap;
   display:flex;
 }
