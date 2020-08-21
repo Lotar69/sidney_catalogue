@@ -1,40 +1,110 @@
-.animals-container {
-  border: 2px solid chocolate;
-  margin: 0 auto;
-  width: 30%;
+.animals-container::-webkit-scrollbar {
+  background-color: black;
+  border: none;
+  width: 10px;
 }
-
-.animal-list p {
-  color: chocolate;
-  margin: 15px 20px;
+.animals-container::-webkit-scrollbar-track-piece {
+  background-color: black;
+  border: none;
+  width: 10px;
 }
-
-.animal-list {
-  width: 90%;
-  margin: 0 auto;
+.animals-container::-webkit-scrollbar-thumb {
+  background-color: chocolate;
+  background-size: cover;
+  border: none;
+}
+.animals-container::-webkit-scrollbar-button {
+  background-color: chocolate;
+}
+*{
+  font-family: 'VT323', monospace;
+  font-size: 28px;
+}
+.show{
+  height: 100vh;
   display: flex;
-  border-bottom: 2px solid chocolate;
-  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 175px;
+  .animals-container {
+    border: 2px solid chocolate;
+    margin: 0 auto 0 auto;
+    overflow-y: scroll;
+    width: 70%;
+    height: 80%;
+    .animal-list {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      border-bottom: 2px solid chocolate;
+      justify-content: space-between;
+      p {
+        color: chocolate;
+        margin: 15px 20px;
+      }
+      .btn-details{
+        position: relative;
+        .a-details:before{
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: 0px;
+          left: 0%;
+          border-radius: 0px;
+          z-index: 0;
+          background: chocolate;
+          box-shadow: 0px 0px 4px chocolate;
+          visibility: hidden;
+          transform: scaleX(0);
+          transition: 0.3s ease-in-out;
+          transform-origin: left;
+          transition-delay: 0s;
+        }
+        .a-details:hover:before{
+          visibility: visible;
+          transform: scaleX(1);
+        }
+      }
+      a {
+        color: chocolate;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+    }
+    .animal-list:last-child {
+      border-bottom: none;
+    }
+  }
+  .btn-out-catalog{
+    padding: 0 !important;
+    position: relative;
+    margin: 0 0 0 30px;
+    a {
+    color: chocolate;
+    text-decoration: none;
+    }
+    .inactive-s:before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0px;
+      left: 0%;
+      border-radius: 0px;
+      z-index: 0;
+      background: chocolate;
+      box-shadow: 0px 0px 4px chocolate;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: 0.3s ease-in-out;
+      transform-origin: left;
+      transition-delay: 0s;
+    }
+    .inactive-s:hover:before{
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
 }
-
-.animal-list:last-child {
-  border-bottom: none;
-}
-
-.animal-list a {
-  color: chocolate;
-}
-
-.animal-list a:hover {
-  text-decoration: none;
-}
-
-p a {
-  color: chocolate;
-  margin-left: 30px;
-}
-
-p a:hover {
-  color: chocolate;
-  text-decoration: none;
-}
+ 

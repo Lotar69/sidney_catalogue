@@ -3,10 +3,9 @@
     <div class="nav col-lg-3">
       <ul>
         <li id="marb"><%= link_to "CREATE NEW SELL", new_animal_path, class: 'un inactive-d' %></li>
-        <li><div class="deux inactive-d">VENTE EN COURS</div></li>
-        <!-- <li class="trois inactive-d">VENTE A CONFIRMER</li> -->
-        <li class="quatre inactive-d">HISTORIQUE DE VENTE</li>
-        <li id="mart"><%= link_to "DECONNECTION", destroy_seller_session_path, class: 'cinq inactive-d', method: :delete %></li>
+        <li class="sells" ><div class="deux inactive-d">ANIMALS FOR SALE</div></li>
+        <li class="history"><div class="quatre inactive-d">HISTORY</div></li>
+        <li id="mart"><%= link_to "SIGN OUT", destroy_seller_session_path, class: 'cinq inactive-d', method: :delete %></li>
       </ul>
     </div>
     <div class="list col-lg-9">
