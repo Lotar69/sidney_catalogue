@@ -3,22 +3,26 @@
   border: none;
   width: 10px;
 }
+
 .animals-container::-webkit-scrollbar-track-piece {
   background-color: black;
   border: none;
   width: 10px;
 }
+
 .animals-container::-webkit-scrollbar-thumb {
   background-color: chocolate;
   background-size: cover;
   border: none;
 }
+
 .animals-container::-webkit-scrollbar-button {
   background-color: chocolate;
 }
 *{
   font-family: 'VT323', monospace;
   font-size: 28px;
+  text-shadow: 0px 0px 4px chocolate;
 }
 .show{
   height: 100vh;
@@ -107,4 +111,31 @@
     }
   }
 }
- 
+
+.hidden-button {
+  display: none;
+}
+
+.form-control {
+  background-color: black;
+  border-color: black;
+  box-shadow: none;
+  color: chocolate;
+}
+.form-control:focus {
+  background-color: black;
+  border-color: black;
+  box-shadow: none;
+  color: chocolate;
+}
+
+.label-search-animals {
+  color: chocolate;
+  padding-top: 12px;
+}
+
+.form-search-animals {
+  display: flex;
+  padding-top: 20px;
+  padding-left: 20px;
+}

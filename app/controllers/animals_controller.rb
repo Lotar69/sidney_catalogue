@@ -4,7 +4,11 @@ class AnimalsController < ApplicationController
   before_action :authenticate_seller!, only: [:edit, :update, :new, :create]
 
   def index
-    @animals = Animal.all
+    if params[:category].present?
+      @animals = Animal.search_by_category(params[:category])
+    else
+      @animals = Animal.all
+    end
   end
 
   def show
@@ -29,7 +33,7 @@ class AnimalsController < ApplicationController
 
   def update
     @animal.update(animal_params)
-    
+
     redirect_to dashboard_path
   end
 
